@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cadastro de Voluntários - ONG das Bruxinhas</title>
+    <meta name="description" content="Junte-se à nossa causa e ajude a espalhar a magia no Halloween!" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+    <header class="main-header" role="banner">
+        <div class="hero" role="region" aria-labelledby="org-name">
+            <div class="logo" aria-hidden="true">OB</div>
+            <div>
+                <h1 id="org-name">ONG das Bruxinhas</h1>
+                <p id="org-tag">Magia e feitiços para todos no Halloween!</p>
+            </div>
+        </div>
+
+        <nav class="main-nav" role="navigation" aria-label="Menu principal">
+            <button class="hamburger-menu" aria-expanded="false" aria-controls="menu-list">
+                <span class="sr-only">Abrir menu</span>
+                <span class="hamburger-icon"></span>
+            </button>
+            <ul id="menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">Projetos</a>
+                    <ul class="submenu">
+                        <li><a href="projetos.html#proj1-title">Grimório Digital</a></li>
+                        <li><a href="projetos.html#proj2-title">Oficina de Varinhas</a></li>
+                        <li><a href="projetos.html#proj3-title">Poções para Iniciantes</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Seja um Bruxo(a) Voluntário(a)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main" tabindex="-1">
+        <section id="cadastro" aria-labelledby="cadastro-title">
+            <h2 id="cadastro-title">Junte-se ao nosso Círculo Mágico</h2>
+            <p>Preencha o pergaminho abaixo para se tornar um bruxo ou bruxa voluntário(a) e nos ajudar a levar mais magia para o Halloween de todos!</p>
+
+            <form id="volunteer-form" novalidate>
+                <div class="form-group">
+                    <label for="nome">Seu Nome de Bruxo(a)</label>
+                    <input id="nome" name="nome" type="text" required placeholder="Ex: Elara Noite-Estrelada">
+                </div>
+                <div class="form-group">
+                    <label for="email">Seu E-mail Arcano</label>
+                    <input id="email" name="email" type="email" required placeholder="seu-email@magico.com">
+                </div>
+                <div class="form-group">
+                    <label for="especialidade">Sua Especialidade Mágica</label>
+                    <select id="especialidade" name="especialidade" required>
+                        <option value="">Escolha sua magia...</option>
+                        <option value="pocoes">Poções e Elixires</option>
+                        <option value="feiticos">Feitiços e Encantamentos</option>
+                        <option value="artefatos">Criação de Artefatos</option>
+                        <option value="adivinhacao">Adivinhação e Profecias</option>
+                        <option value="herbologia">Herbologia Mágica</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="disponibilidade">Disponibilidade (horas por semana)</label>
+                    <input id="disponibilidade" name="disponibilidade" type="number" min="1" required placeholder="Quantas horas mágicas você pode dedicar?">
+                </div>
+                <div class="form-group">
+                    <label for="motivacao">Por que você quer se juntar a nós?</label>
+                    <textarea id="motivacao" name="motivacao" required placeholder="Conte-nos sobre sua paixão pela magia..."></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Inscrição Mágica</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer" role="contentinfo">
+        <p>© ONG das Bruxinhas. Todos os feitiços reservados.</p>
+        <p><a href="#top">Voltar ao Caldeirão</a></p>
+    </footer>
+
+    <div id="modal-feedback" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Status da Inscrição</h3>
+            <p id="modal-text"></p>
+            <button class="btn" id="modal-close">Fechar</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
