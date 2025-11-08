@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        :root{ --bg:#ffffff; --text:#0b2545; --accent:#0b6b4f; --muted:#4b5563; --focus: 3px solid #ffb703; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.4; } html,body{height:100%} body{ margin:0; background:var(--bg); color:var(--text); padding:1rem; } a{color:var(--accent); text-decoration:underline} header, main, footer, nav{max-width:900px; margin:0 auto} header{padding:0.5rem 0 1rem} h1{font-size:1.75rem; margin:0 0 .25rem} h2{text-align: center; margin-bottom: 1rem;} p{margin:.5rem 0} .skip-link{ position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; } .skip-link:focus{ left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem 1rem; background: #000; color:#fff; z-index:1000; } nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem} nav a{font-weight:600} .hero{ border-radius:8px; padding:1rem; background:#f6f9fb; margin-bottom:1rem; display:flex; gap:1rem; align-items:center; } .logo{ width:72px;height:72px;border-radius:8px; background:linear-gradient(135deg,#0b6b4f,#0b2545); display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700; flex:0 0 72px; } section{margin-bottom:1rem;padding:0.5rem} .grid{display:grid;grid-template-columns:1fr;gap:1rem; padding:1rem; box-sizing: border-box;} aside{padding:1rem;border-radius:8px;} @media(min-width:700px){ .grid{grid-template-columns:2fr 1fr} } form{display:grid;gap:.5rem} label{font-size:.95rem} input[type="text"],input[type="email"],input[type="date"],textarea{ padding:.5rem;border:1px solid #cbd5e1;border-radius:6px;font-size:1rem; width:100%; box-sizing: border-box; } fieldset { border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; } legend { font-weight: bold; padding: 0 .5rem; } textarea{min-height:120px; resize:vertical} button{ background:var(--accent); color:#fff;border:0;padding:.6rem 1rem;border-radius:6px; font-weight:600;cursor:pointer; } button:disabled{opacity:.6;cursor:not-allowed} a:focus, button:focus, input:focus, textarea:focus, select:focus{outline:none; box-shadow:none;} a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:var(--focus); border-radius:4px; } .sr-only{ position:absolute!important; height:1px;width:1px;overflow:hidden; clip:rect(1px,1px,1px,1px);white-space:nowrap; clip-path:inset(50%);border:0;padding:0;margin:-1px; } @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} } footer{font-size:.9rem;color:var(--muted);padding-top:1rem;border-top:1px solid #e6eef2} .status{padding:.5rem;border-radius:6px} .status.success{background:#e6fffa;border:1px solid #b7f5df;color:#056e59} .status.error{background:#fff1f2;border:1px solid #f5c2c7;color:#9b1c1c}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cpfInput = document.getElementById('cpf');
+            const phoneInput = document.getElementById('telefone');
+            const cepInput = document.getElementById('cep');
+
+            cpfInput.addEventListener('input', function () {
+                let value = cpfInput.value.replace(/\D/g, '');
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+                value = value.replace(/(\d{3})\.(\d{3})\.(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                cpfInput.value = value;
+            });
+
+            phoneInput.addEventListener('input', function () {
+                let value = phoneInput.value.replace(/\D/g, '');
+                value = value.replace(/(\d{2})(\d)/, '($1) $2');
+                value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                phoneInput.value = value;
+            });
+
+            cepInput.addEventListener('input', function () {
+                let value = cepInput.value.replace(/\D/g, '');
+                value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                cepInput.value = value;
+            });
+        });
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+    <header role="banner" aria-label="Cabeçalho da ONG">
+        <div class="hero" role="region" aria-labelledby="org-name">
+            <div class="logo" aria-hidden="true">LI</div>
+            <div>
+                <h1 id="org-name">Lorem Ipsum</h1>
+                <p id="org-tag">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <nav role="navigation" aria-label="Menu principal" style="background-color: #0b6b4f; padding: 1rem; border-radius: 8px;">
+            <ul style="list-style: none; display: flex; justify-content: center; gap: 2rem; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Home</a></li>
+                <li><a href="cadastro.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Cadastro</a></li>
+                <li><a href="projetos.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main" tabindex="-1">
+        <section id="cadastro-form" aria-labelledby="cadastro-title">
+            <h2 id="cadastro-title">Formulário de Cadastro</h2>
+            <form>
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00" maxlength="14">
+
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" required placeholder="(00) 00000-0000" maxlength="15">
+
+                    <label for="data-nascimento">Data de Nascimento</label>
+                    <input type="date" id="data-nascimento" name="data-nascimento" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" name="endereco" required placeholder="Digite seu endereço">
+
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" name="cep" required placeholder="00000-000" maxlength="9">
+
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" required placeholder="Digite sua cidade">
+
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" required placeholder="Digite seu estado">
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>© Lorem Ipsum. Todos os direitos reservados.</p>
+        <p><a href="#top">Voltar ao topo</a></p>
+    </footer>
+</body>
+</html>

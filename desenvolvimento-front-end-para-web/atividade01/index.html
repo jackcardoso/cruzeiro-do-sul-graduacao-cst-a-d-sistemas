@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lorem Ipsum</title>
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    <style>
+        :root{
+            --bg:#ffffff;
+            --text:#0b2545;
+            --accent:#0b6b4f;
+            --muted:#4b5563;
+            --focus: 3px solid #ffb703;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            line-height:1.4;
+        }
+
+        /* Basic layout */
+        html,body{height:100%}
+        body{
+            margin:0;
+            background:var(--bg);
+            color:var(--text);
+            padding:1rem;
+        }
+        a{color:var(--accent); text-decoration:underline}
+        header, main, footer, nav{max-width:900px; margin:0 auto}
+        header{padding:0.5rem 0 1rem}
+        h1{font-size:1.75rem; margin:0 0 .25rem}
+        p{margin:.5rem 0}
+
+        /* Skip link */
+        .skip-link{
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus{
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem 1rem;
+            background: #000;
+            color:#fff;
+            z-index:1000;
+        }
+
+        nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem}
+        nav a{font-weight:600}
+
+        .hero{
+            border-radius:8px;
+            padding:1rem;
+            background:#f6f9fb;
+            margin-bottom:1rem;
+            display:flex;
+            gap:1rem;
+            align-items:center;
+        }
+        .logo{
+            width:72px;height:72px;border-radius:8px;
+            background:linear-gradient(135deg,#0b6b4f,#0b2545);
+            display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+            flex:0 0 72px;
+        }
+
+        /* Sections */
+        section{margin-bottom:1rem;padding:0.5rem}
+        .grid{display:grid;grid-template-columns:1fr;gap:1rem; padding:1rem; box-sizing: border-box;}
+        aside{padding:1rem;border-radius:8px;}
+
+        @media(min-width:700px){ .grid{grid-template-columns:2fr 1fr} }
+
+        /* Contact form */
+        form{display:grid;gap:.5rem}
+        label{font-size:.95rem}
+        input[type="text"],input[type="email"],textarea{
+            padding:.5rem;border:1px solid #cbd5e1;border-radius:6px;font-size:1rem;
+            width:100%;
+        }
+        textarea{min-height:120px; resize:vertical}
+        button{
+            background:var(--accent); color:#fff;border:0;padding:.6rem 1rem;border-radius:6px;
+            font-weight:600;cursor:pointer;
+        }
+        button:disabled{opacity:.6;cursor:not-allowed}
+
+        /* Focus styles */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus{outline:none; box-shadow:none;}
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+            outline:var(--focus); border-radius:4px;
+        }
+
+        /* Visually hidden for screen readers */
+        .sr-only{
+            position:absolute!important;
+            height:1px;width:1px;overflow:hidden;
+            clip:rect(1px,1px,1px,1px);white-space:nowrap;
+            clip-path:inset(50%);border:0;padding:0;margin:-1px;
+        }
+
+        /* Reduce motion respect */
+        @media (prefers-reduced-motion: reduce){
+            *{transition:none!important;animation:none!important}
+        }
+
+        footer{font-size:.9rem;color:var(--muted);padding-top:1rem;border-top:1px solid #e6eef2}
+
+        /* Success / error messages */
+        .status{padding:.5rem;border-radius:6px}
+        .status.success{background:#e6fffa;border:1px solid #b7f5df;color:#056e59}
+        .status.error{background:#fff1f2;border:1px solid #f5c2c7;color:#9b1c1c}
+
+        /* Banner styles */
+        .banner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .banner-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Lorem ipsum dolor sit amet</a>
+
+    <header role="banner" aria-label="Cabeçalho da ONG">
+        <div class="hero" role="region" aria-labelledby="org-name">
+            <div class="logo" aria-hidden="true">LI</div>
+            <div>
+                <h1 id="org-name">Lorem Ipsum</h1>
+                <p id="org-tag">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+
+
+        <nav role="navigation" aria-label="Menu principal" style="background-color: #0b6b4f; padding: 1rem; border-radius: 8px;">
+            <ul style="list-style: none; display: flex; justify-content: center; gap: 2rem; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Home</a></li>
+                <li><a href="cadastro.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Cadastro</a></li>
+                <li><a href="projetos.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content" role="main" tabindex="-1">
+        <section id="banner-divulgacao" aria-labelledby="banner-title">
+            <h2 id="banner-title" class="sr-only">Banner de Divulgação</h2>
+            <div class="banner-grid">
+                <img src="https://placehold.co/600x400/0b6b4f/ffffff?text=Nossa+Causa+1" alt="Imagem representando a primeira causa da ONG.">
+                <img src="https://placehold.co/600x400/0b2545/ffffff?text=Nossa+Causa+2" alt="Imagem representando a segunda causa da ONG.">
+                <img src="https://placehold.co/600x400/ffb703/0b2545?text=Nossa+Causa+3" alt="Imagem representando a terceira causa da ONG.">
+            </div>
+        </section>
+
+        <section id="sobre" aria-labelledby="sobre-title">
+            <h2 id="sobre-title">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        </section>
+
+        <section id="programas" aria-labelledby="programas-title">
+            <h2 id="programas-title">Lorem Ipsum Dolor</h2>
+            <div class="grid" role="list">
+                <article role="listitem" aria-labelledby="p1">
+                    <h3 id="p1">Lorem Ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+
+                <article role="listitem" aria-labelledby="p2">
+                    <h3 id="p2">Dolor Sit</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+
+                <article role="listitem" aria-labelledby="p3">
+                    <h3 id="p3">Amet Consectetur</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" aria-labelledby="contato-title" class="contato">
+            <h2 id="contato-title">Lorem Ipsum</h2>
+
+            <div aria-live="polite" id="status" class="status sr-only" role="status"></div>
+
+            <div class="grid">
+                <div>
+                    <form id="contact-form" aria-labelledby="contato-title" novalidate>
+                        <div>
+                            <label for="nome">Lorem</label>
+                            <input id="nome" name="nome" type="text" required aria-required="true" autocomplete="name" />
+                        </div>
+
+                        <div>
+                            <label for="email">Ipsum</label>
+                            <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" />
+                        </div>
+
+                        <div>
+                            <label for="telefone">Dolor (optional)</label>
+                            <input id="telefone" name="telefone" type="text" inputmode="tel" placeholder="(11) 9 9999-9999" />
+                        </div>
+
+                        <div>
+                            <label for="mensagem">Amet</label>
+                            <textarea id="mensagem" name="mensagem" required aria-required="true" aria-describedby="mensagem-help"></textarea>
+                            <div id="mensagem-help" class="sr-only">Lorem ipsum dolor sit amet.</div>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="submit-btn">Lorem Ipsum</button>
+                        </div>
+                    </form>
+                </div>
+
+                <aside aria-labelledby="info-title" role="complementary">
+                    <h3 id="info-title">Lorem Ipsum</h3>
+                    <address>
+                        Lorem Ipsum, 123<br />
+                        Dolor Sit — Amet Consectetur<br />
+                        <a href="tel:+5511999999999" aria-label="Ligar para Lorem Ipsum">+55 (11) 99999-9999</a><br />
+                        <a href="mailto:contato@loremipsum.org" aria-label="Enviar e-mail para Lorem Ipsum">contato@loremipsum.org</a>
+                    </address>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <nav aria-label="Redes sociais">
+                        <ul>
+                            <li><a href="#" aria-label="Página do Facebook de Lorem Ipsum">Facebook</a></li>
+                            <li><a href="#" aria-label="Perfil Instagram de Lorem Ipsum">Instagram</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>© Lorem Ipsum. Todos os direitos reservados.</p>
+        <p><a href="#top">Voltar ao topo</a></p>
+    </footer>
+
+    <script>
+        // Acessível: tratamento simples do formulário com feedback em aria-live
+        (function(){
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('status');
+            const submitBtn = document.getElementById('submit-btn');
+
+            function showStatus(message, type){
+                status.className = 'status ' + (type === 'error' ? 'error' : 'success');
+                status.textContent = message;
+                status.classList.remove('sr-only');
+                status.setAttribute('aria-live','polite');
+                // voltar foco para a região de status para leitores de tela
+                status.tabIndex = -1;
+                status.focus();
+            }
+
+            form.addEventListener('submit', function(ev){
+                ev.preventDefault();
+                submitBtn.disabled = true;
+
+                // validação simples
+                const nome = form.nome.value.trim();
+                const email = form.email.value.trim();
+                const mensagem = form.mensagem.value.trim();
+
+                if(!nome || !email || !mensagem){
+                    showStatus('Por favor preencha os campos obrigatórios: nome, e-mail e mensagem.', 'error');
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                // Simula envio (em produção, enviar para backend)
+                setTimeout(function(){
+                    form.reset();
+                    showStatus('Mensagem enviada com sucesso. Obrigado por entrar em contato!', 'success');
+                    submitBtn.disabled = false;
+                }, 700);
+            });
+        })();
+    </script>
+</body>
+</html>

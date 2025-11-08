@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum</title>
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    <style>
+        :root{
+            --bg:#ffffff;
+            --text:#0b2545;
+            --accent:#0b6b4f;
+            --muted:#4b5563;
+            --focus: 3px solid #ffb703;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            line-height:1.4;
+        }
+
+        /* Basic layout */
+        html,body{height:100%}
+        body{
+            margin:0;
+            background:var(--bg);
+            color:var(--text);
+            padding:1rem;
+        }
+        a{color:var(--accent); text-decoration:underline}
+        header, main, footer, nav{max-width:900px; margin:0 auto}
+        header{padding:0.5rem 0 1rem}
+        h1{font-size:1.75rem; margin:0 0 .25rem}
+        p{margin:.5rem 0}
+
+        nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem}
+        nav a{font-weight:600}
+
+        .hero{
+            border-radius:8px;
+            padding:1rem;
+            background:#f6f9fb;
+            margin-bottom:1rem;
+            display:flex;
+            gap:1rem;
+            align-items:center;
+        }
+        .logo{
+            width:72px;height:72px;border-radius:8px;
+            background:linear-gradient(135deg,#0b6b4f,#0b2545);
+            display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+            flex:0 0 72px;
+        }
+
+        /* Sections */
+        section{margin-bottom:1rem;padding:0.5rem}
+        .grid{display:grid;grid-template-columns:1fr;gap:1rem; padding:1rem; box-sizing: border-box;}
+        aside{padding:1rem;border-radius:8px;}
+
+        @media(min-width:700px){ .grid{grid-template-columns:2fr 1fr} }
+
+        /* Contact form */
+        form{display:grid;gap:.5rem}
+        label{font-size:.95rem}
+        input[type="text"],input[type="email"],textarea{
+            padding:.5rem;border:1px solid #cbd5e1;border-radius:6px;font-size:1rem;
+            width:100%;
+        }
+        textarea{min-height:120px; resize:vertical}
+        button{
+            background:var(--accent); color:#fff;border:0;padding:.6rem 1rem;border-radius:6px;
+            font-weight:600;cursor:pointer;
+        }
+        button:disabled{opacity:.6;cursor:not-allowed}
+
+        /* Focus styles */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus{outline:none; box-shadow:none;}
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+            outline:var(--focus); border-radius:4px;
+        }
+
+        /* Visually hidden for screen readers */
+        .sr-only{
+            position:absolute!important;
+            height:1px;width:1px;overflow:hidden;
+            clip:rect(1px,1px,1px,1px);white-space:nowrap;
+            clip-path:inset(50%);border:0;padding:0;margin:-1px;
+        }
+
+        /* Reduce motion respect */
+        @media (prefers-reduced-motion: reduce){
+            *{transition:none!important;animation:none!important}
+        }
+
+        footer{font-size:.9rem;color:var(--muted);padding-top:1rem;border-top:1px solid #e6eef2}
+
+        /* Success / error messages */
+        .status{padding:.5rem;border-radius:6px}
+        .status.success{background:#e6fffa;border:1px solid #b7f5df;color:#056e59}
+        .status.error{background:#fff1f2;border:1px solid #f5c2c7;color:#9b1c1c}
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header role="banner" aria-label="Cabeçalho da ONG">
+        <div class="hero" role="region" aria-labelledby="org-name">
+            <div class="logo" aria-hidden="true">LI</div>
+            <div>
+                <h1 id="org-name">Lorem Ipsum</h1>
+                <p id="org-tag">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <nav role="navigation" aria-label="Menu principal" style="background-color: #0b6b4f; padding: 1rem; border-radius: 8px;">
+            <ul style="list-style: none; display: flex; justify-content: center; gap: 2rem; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Home</a></li>
+                <li><a href="cadastro.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Cadastro</a></li>
+                <li><a href="projetos.html" style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main" tabindex="-1">
+        <section id="o-que-e-voluntariado">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <img src="https://placehold.co/800x400/0b6b4f/ffffff?text=Voluntariado" alt="Grupo de voluntários sorrindo.">
+        </section>
+
+        <section id="como-doar">
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <img src="https://placehold.co/800x400/0b2545/ffffff?text=Doação" alt="Mãos segurando uma caixa de doações.">
+        </section>
+
+        <section id="beneficios">
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <img src="https://placehold.co/800x400/ffb703/0b2545?text=Benefícios" alt="Comunidade reunida em um evento.">
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>© Lorem Ipsum. Todos os direitos reservados.</p>
+        <p><a href="#top">Voltar ao topo</a></p>
+    </footer>
+</body>
+</html>
